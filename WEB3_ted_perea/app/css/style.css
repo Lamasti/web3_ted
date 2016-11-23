@@ -1,0 +1,119 @@
+
+    @-webkit-keyframes mymove {
+        0% {right: -75%;}
+        100% {right: -2%;}
+    }
+
+    /* Standard syntax */
+    @keyframes mymove {
+        0% {right: -75%;}
+        100% {right: -2%;}
+    }
+
+    @-webkit-keyframes mymove_reverse {
+        0% {right: 0;}
+        100% {right: -75%;}
+    }
+
+    /* Standard syntax */
+    @keyframes mymove_reverse {
+        0% {right: 0;}
+        100% {right: -75%;}
+    }
+
+
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    overflow-y: hidden;
+    font-family: Arial;
+}
+
+main{
+    position: relative;
+    z-index: 1;
+    overflow-y: hidden;
+}
+
+#video{
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.logo_ted{
+    position: absolute;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 15%;
+    z-index: 2;
+}
+
+.open_tiroir{
+    position: absolute;
+    background-color: red;
+    border: none;
+    right: 0;
+    top : calc(75%/2);
+    width: 1%;
+    height: 25%;
+    transition-duration: 1s;
+}
+
+    .open_tiroir:hover
+    {
+        height: 50%;
+        top: 25%;
+        transition-duration: 1s;
+        cursor: pointer;
+    }
+
+#tiroir{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: -75%;
+    top : 25%;
+    width: 70%;
+    height: 50%;
+    float: right;
+    border: 4px solid red;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 2;
+}
+
+.tiroir_visible
+{
+    animation: mymove 0.6s forwards;
+}
+
+.tiroir_out
+{
+    animation: mymove_reverse 0.6s forwards;
+}
+
+.infos{
+    width: 50%;
+}
+
+.slider{
+    width: 50%;
+    border-left: 4px solid red;
+
+}
+
+.generalites
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.generalites li {
+    border-right: 1px solid white;
+    margin: 2%;
+}
